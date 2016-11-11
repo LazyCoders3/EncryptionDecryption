@@ -52,7 +52,6 @@ public class Encryption
             //cipher = Cipher.getInstance("AES");
             //String key = "e8a7f643-2879-42";
             // decrypt the text
-            
             cipher.init(Cipher.DECRYPT_MODE, aesKey);
             String decrypted = new String(cipher.doFinal(encrypted));
             System.err.println(decrypted);
@@ -68,11 +67,11 @@ public class Encryption
     public static void main(String[] args) 
     {
         Encryption app = new Encryption();
-        Encryption bpp = new Encryption();
-        byte[] abc = app.encrypt("janina1");
-        byte[] bcd = app.encrypt("janina1");
-        System.out.println(app.decryption(abc));
-        System.out.println(app.decryption(bcd));
+        
+        byte[] result = app.encrypt("Hello world!");
+        
+        System.out.println(app.decryption(result));
+        
 
     }
 }
